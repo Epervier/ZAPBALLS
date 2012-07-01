@@ -3,7 +3,11 @@
 #################
 Library/
 ProjectSettings/
+obj/
 Temp/
+*.csproj
+*.unityproj
+*.sln
 
 #################
 ## Eclipse
