@@ -17,8 +17,8 @@ public class Attack : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        m_pAttackStats = GetComponentInChildren<AttackStats>();
-        m_pAttackType = GetComponentInChildren<AttackType>();
+        //m_pAttackStats = GetComponentInChildren<AttackStats>();
+        //m_pAttackType = GetComponentInChildren<AttackType>();
 	}
 	
 	// Update is called once per frame

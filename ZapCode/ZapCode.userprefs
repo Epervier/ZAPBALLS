@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\Enemy\Enemy.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Game\Enemy\Types\BasicEnemy.cs" Line="7" Column="6" />
+      <File FileName="Assets\Scripts\Game\Enemy\Types\DashingEnemy.cs" Line="9" Column="35" />
+      <File FileName="Assets\Scripts\Game\Enemy\EnemyType.cs" Line="11" Column="21" />
+      <File FileName="Assets\Scripts\Game\Enemy\Enemy.cs" Line="38" Column="49" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets\Scripts\Game\Enemy\Enemy.cs" line="40" offsetX="396" offsetY="592" expression="m_pType" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>
