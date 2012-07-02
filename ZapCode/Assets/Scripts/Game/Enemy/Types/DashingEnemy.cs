@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class LevelObject : MonoBehaviour {
+public class DashingEnemy : EnemyType {
+
+    public string m_sName = "Dashing Enemy";
 
 	// Use this for initialization
 	void Start () {
@@ -9,7 +11,7 @@ public class LevelObject : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	public void UpdateLevelObject ( float dt ) {
+	void Update () {
 	
 	}
 }
