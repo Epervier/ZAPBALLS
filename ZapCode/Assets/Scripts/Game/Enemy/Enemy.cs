@@ -5,8 +5,15 @@ public class Enemy : MonoBehaviour
 {
     #region Variables
 
-    private float m_fHealth;
-    private float m_fSpeed;
+    public float m_fHealth;
+    public float m_fSpeed;
+    public bool m_bIsDead = false;
+
+    public bool IsDead
+    {
+        get { return m_bIsDead; }
+        set { m_bIsDead = value; }
+    }
 
     /// <summary>
     /// Contains the stats the enemy has when it is spawned.  Doesnt change!  The pointer might, but the values within are read only.
@@ -21,7 +28,12 @@ public class Enemy : MonoBehaviour
     public float Health
     {
         get { return m_fHealth; }
-        set { m_fHealth = value; }
+        set 
+        { 
+            m_fHealth = value;
+            if (m_fHealth <= 0)
+                KillEnemy();
+        }
     }
 
     public float Speed
@@ -39,11 +51,16 @@ public class Enemy : MonoBehaviour
         m_pStats.transform.parent = this.transform;
         m_pStats.gameObject.layer = this.gameObject.layer;
 
+        m_fHealth = m_pStats.fHealth;
+        m_fSpeed = m_pStats.fSpeed;
+
         m_pType = Instantiate(type) as EnemyType;
         m_pType.Initialize(this);
         m_pType.gameObject.layer = this.gameObject.layer;
         gameObject.name = m_pType.m_sName;
-        
+
+        m_bIsDead = false;
+        gameObject.SetActiveRecursively(true);
         
     }
 
@@ -68,6 +85,7 @@ public class Enemy : MonoBehaviour
         GameObject go = new GameObject();
         go.AddComponent<Enemy>();
         go.layer = parent.layer;
+        go.transform.parent = parent.transform;
 
         Enemy enemy = go.GetComponent<Enemy>();
         enemy.Initialize(type, stats);
@@ -76,4 +94,12 @@ public class Enemy : MonoBehaviour
 
         return enemy;
     }
+
+    private void KillEnemy()
+    {
+        m_pType.OnDeath();
+        m_bIsDead = true;
+        gameObject.SetActiveRecursively(false);
+    }
+
 }

@@ -7,9 +7,11 @@ using System.Collections;
 /// </summary>
 public class AttackStats : MonoBehaviour {
 
-    float m_fFireRate = 1.0f;
-    float m_fDamage = 1.0f;
-    float m_fLifetime = 1.0f;
+    public float m_fFireRate = 1.0f;
+    public float m_fDamage = 1.0f;
+    public float m_fLifetime = 1.0f;
+    public float m_fGrowthRate = 1.0f;
+    public float m_fMaxSize = 100;
 
 	// Use this for initialization
 	void Start () {
