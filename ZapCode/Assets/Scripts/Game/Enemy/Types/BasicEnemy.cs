@@ -30,23 +30,23 @@ public class BasicEnemy : EnemyType {
         if (pos.x < bottomLeft.x)
         {
             m_vDirection.x *= -1;
-            //pos.x = upperRight.x;
+            pos.x = bottomLeft.x;
         }
         else if (pos.x > upperRight.x)
         {
             m_vDirection.x *= -1;
-            //pos.x = bottomLeft.x;
+            pos.x = upperRight.x;
         }
 
         if (pos.y < bottomLeft.y)
         {
             m_vDirection.y *= -1;
-            //pos.y = upperRight.y;
+            pos.y = bottomLeft.y;
         }
         else if (pos.y > upperRight.y)
         {
             m_vDirection.y *= -1;
-            //pos.y = bottomLeft.y;
+            pos.y = upperRight.y;
         }
         transform.position = pos;
     }
